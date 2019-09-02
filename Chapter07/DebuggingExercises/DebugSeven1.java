@@ -7,15 +7,15 @@ public class DebugSeven1
       String name2 = "Roger";
       String name3 = "Stacy";
 
-      if(name1== name2)
+      if(name1.equals(name2))
         System.out.println(name1 + " and " + name2 +
           " are the same");
-      if(name1 == name3)
+      if(name1.equals(name3))
         System.out.println(name1 + " and " + name3 +
           " are the same");
-      if(name1 == "roger")
+      if(name1.equals("roger"))
         System.out.println(name1 + " and 'roger' are the same");
-      if(name1 == "Roger")
+      if(name1.equals("Roger"))
         System.out.println(name1 + " and 'Roger' are the same");
    }
 }
