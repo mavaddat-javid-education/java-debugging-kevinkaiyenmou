@@ -17,22 +17,22 @@ public class DebugSeven2
       Scanner in = new Scanner(System.in);
       System.out.print("Enter a series of integers separated by spaces >> ");
       str = in.nextLine();
-      length = length();
-      for(x = 0; x <= length; ++x)
+      length = str.length();
+      for(x = 0; x < length; ++x)
       {
-         if(str.charAt(x) == " ")
+         if(str.charAt(x) == ' ')
          {
-             partStr = str.substring(x, lastSpace + 1);     
+             partStr = str.substring(lastSpace+1, x );
              num = Integer.parseInt(partStr);
              System.out.println("                " + num);
-             sum = num;
-             lastSpace == x;
-          } 
+             sum += num;
+             lastSpace = x;
+          }
       }
       partStr = str.substring(lastSpace + 1, length);
       num = Integer.parseInt(partStr);
       System.out.println("                " + num);
-      sum = num;
+      sum += num;
       System.out.println("         -------------------" +
          "\nThe sum of the integers is " + sum);
    }
