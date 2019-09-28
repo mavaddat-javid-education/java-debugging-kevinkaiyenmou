@@ -8,8 +8,7 @@ public class DebugTen4
       String name = "Franklin";
       double credit = 1000.00;
       double purchase = 1325.77;
-      DebugCustomerMakingPurchase cust = new
-         DebugCustomerMakingPurchase(id, credit, name, purchase);
-      cust.display();
+      DebugCustomerMakingPurchase cost = new DebugCustomerMakingPurchase(id, credit, name, purchase);
+      cost.display();
    }
 }

@@ -1,0 +1,7 @@
+Array is now:			[88, 33, 99, 22, 54]
+When a is 0 and b is 0 then the array is now:	[33, 88, 99, 22, 54]
+When a is 0 and b is 2 then the array is now:	[33, 88, 22, 99, 54]
+When a is 0 and b is 3 then the array is now:	[33, 88, 22, 54, 99]
+When a is 1 and b is 1 then the array is now:	[33, 22, 88, 54, 99]
+When a is 1 and b is 2 then the array is now:	[33, 22, 54, 88, 99]
+When a is 2 and b is 0 then the array is now:	[22, 33, 54, 88, 99]

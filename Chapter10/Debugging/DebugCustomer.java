@@ -7,7 +7,7 @@ public class DebugCustomer
     {
        idNumber = id;
        this.name = name;
-       credit = credit;
+       this.credit = credit;
     }
     public void display()
     {
