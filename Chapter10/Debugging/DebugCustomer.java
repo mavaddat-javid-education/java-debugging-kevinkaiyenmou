@@ -7,11 +7,10 @@ public class DebugCustomer
     {
        idNumber = id;
        this.name = name;
-       this.credit = credit;
+       this.creditLimit = credit;
     }
     public void display()
     {
-       System.out.println("Customer #" + idNumber +
-          " Name: " +  name + "\nCredit limit $" + creditLimit)
+       System.out.println("Customer #" + idNumber + " Name: " +  name + "\nCredit limit $" + creditLimit);
     }
 }
