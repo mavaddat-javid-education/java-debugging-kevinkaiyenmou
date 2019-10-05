@@ -6,7 +6,7 @@ public class DebugCustomerMakingPurchase extends DebugCustomer
     {
       super(id, name, credit);
        amountOfPurchase = purchAmount;
-       if(amountOfPurchase > creditLimit)
+       if(amountOfPurchase > this.credit)
           overLimit = true;
        else
           overLimit = false;

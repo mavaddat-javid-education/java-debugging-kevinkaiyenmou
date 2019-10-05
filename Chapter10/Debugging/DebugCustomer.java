@@ -1,16 +1,16 @@
 public class DebugCustomer
 {
-    protected int idNumber;
+    protected int id;
     protected String name;
-    protected double creditLimit;
-    public DebugCustomer(int id, String name, double credit)
+    protected double credit; //'credit' is the credit limit
+    public DebugCustomer(int id, String name, double credit /*'credit' is the credit limit */)
     {
-       idNumber = id;
+       this.id = id;
        this.name = name;
-       this.creditLimit = credit;
+       this.credit = credit;
     }
     public void display()
     {
-       System.out.println("Customer #" + idNumber + " Name: " +  name + "\nCredit limit $" + creditLimit);
+       System.out.println("Customer #" + id + " Name: " +  name + "\nCredit limit $" + credit);
     }
 }

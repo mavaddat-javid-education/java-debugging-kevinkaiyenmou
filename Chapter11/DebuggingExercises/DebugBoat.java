@@ -23,6 +23,6 @@ public abstract class DebugBoat
       return("This " + boatType + "boat carries " + passengers +
         " and is powered by " + power);
    }
-   public abstract void setPower();
-   public abstract void setPassengers();
+   protected abstract void setPower();
+   protected abstract void setPassengers();
 }
