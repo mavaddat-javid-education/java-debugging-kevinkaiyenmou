@@ -20,7 +20,7 @@ public abstract class DebugBoat
    }
    public String toString()
    {
-      return("This " + boatType + "boat carries " + passengers +
+      return("This " + boatType + " boat carries " + passengers +
         " and is powered by " + power);
    }
    protected abstract void setPower();
