@@ -3,7 +3,7 @@ public class DebugTwelve1
 {
   public static void main(String[] args) throws ArithmeticException
   {
-     double num = -8.8, result;
+     double num = 8.8, result;
      try
      {
         if(num <= 0)
@@ -11,7 +11,7 @@ public class DebugTwelve1
         result = Math.log(num);
         System.out.println("Result is " + result);
      }
-     catch()
+     catch(ArithmeticException e)
      {
         System.out.println("Can't take logarithm for value of zero or lower");
      }
