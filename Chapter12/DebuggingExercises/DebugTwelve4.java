@@ -22,13 +22,11 @@ public class DebugTwelve4
          }
          catch(NumberFormatException error)
          {	
-            --x;
             JOptionPane.showMessageDialog(null, inStr + "\nNonnumeric ID");
          }
-         catc(FixDebugEmployeeIDException error)
+         catch(FixDebugEmployeeIDException error)
          {	
-	    --x;
-            JOptionPane.showMmrge");
+            JOptionPane.showMessageDialog(error.getMessage));
          }
       }
       for(int x = 0; x < emp.length; ++x)
