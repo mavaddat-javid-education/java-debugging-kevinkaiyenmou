@@ -37,7 +37,7 @@ public class DebugThirteen1
          else
             System.out.println(file1.getFileName() + " is the same size as " + file2.getFileName());
       }
-      catch(IOException e)
+      catch(IOException e) 
       {
           System.out.println("IO Exception");
       }
