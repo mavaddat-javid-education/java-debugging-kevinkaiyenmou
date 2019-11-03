@@ -10,27 +10,28 @@ public class DebugThirteen2
 {
    public static void main(String[] args)
    {
+      FileSystem fs = FileSystems.getDefault();
       Path fileIn =
-         Paths.get(C:\\Java\\Chapter.13\\DebugData3.txt);
+         fs.getPath("/Users/kevinmou/Documents/GitHub/java-debugging-kevinkaiyenmou/Chapter13/DebuggingExercises/DebugData3.txt");
       Path fileOut =
-         Paths.get(C:\\Java\\Chapter.13\\DebugData3New.txt);
+         fs.getPath("/Users/kevinmou/Documents/GitHub/java-debugging-kevinkaiyenmou/Chapter13/DebuggingExercises/DebugData3New.txt");
       String areaCode = "(312) ";
       String phone;
       InputStream input = null;
-      OutputStream output = null
+      OutputStream output = null;
       try
       {
          input = Files.newInputStream(fileIn);
-         BufferedReader reader = new BufferedReader
-            (new InputStreamReader(input);
+         BufferedReader reader = new BufferedReader(new InputStreamReader(input));
          output = Files.newOutputStream(fileOut);
-         phone = input.readLine();
-         while(phone == null)
+         phone = reader.readLine();
+         while(phone != null)
          {
+            System.out.println("Trying to write this phone number to the file: " + areaCode + phone);
             phone = areaCode + phone + System.getProperty("line.separator");
             byte[] phoneBytes = phone.getBytes();
-            output.writeln(phoneBytes);
-            phone = reader.readline();
+            output.write(phoneBytes);
+            phone = reader.readLine(); 
          }
          input.close();
        }
