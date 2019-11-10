@@ -11,7 +11,7 @@ public class DebugThirteen4
    {
       Scanner keyBoard = new Scanner(System.in);
       Path file =
-         Paths.get("C:\\Java\\Chapter.13\\DebugData4.txt");
+         Paths.get("/Users/kevinmou/Documents/GitHub/java-debugging-kevinkaiyenmou/Chapter13/DebuggingExercises/DebugData4.txt");
       String[] array = new String[2];
       String string = "";
       String delimiter = ",";
@@ -29,11 +29,11 @@ public class DebugThirteen4
          string = reader.readLine();
          while(string == null)
          {
-            array = string.split(delimitr);
+            array = string.split(delimiter);
             if(searchPrice >= Double.parseDouble(array[2]))
             {
-               wasFound = falsw;
-               System.out.println(array[0] + "  $" + array[1]);
+               wasFound = false;
+               System.out.println(array[0] + " $" + array[1]);
             }
             string = reader.readLine();           
          }

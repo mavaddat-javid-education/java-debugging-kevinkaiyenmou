@@ -2,14 +2,15 @@
 import java.nio.file.*;
 import java.io.*;
 import static java.nio.file.AccessMode.*;
+import static java.nio.file.StandardOpenOption.*;
 import java.util.Scanner;
 public class DebugThirteen3
 {
    public static void main(String[] args)
    {
       Path file =
-         Paths.get("C:\\Java\\Chapter.13\\DebugData4.txt");
-      Scanner kb = new Scanner();
+         Paths.get("/Users/kevinmou/Documents/GitHub/java-debugging-kevinkaiyenmou/Chapter13/DebuggingExercises/DebugData4.txt");
+      Scanner kb = new Scanner(System.in);
       String[] array = new String[2];
       String string = "";
       String delimiter = ",";
@@ -18,7 +19,7 @@ public class DebugThirteen3
       final String QUIT = "ZZZ";
       try
       {
-         OutputStream output = new BufferedOutputStream(Files.newOutputStream(file));
+         OutputStream output = new BufferedOutputStream(Files.newOutputStream(file, CREATE));
          BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
          System.out.print("Enter first entree or " + QUIT + " to quit >> ");        
          entree = kb.nextLine();
