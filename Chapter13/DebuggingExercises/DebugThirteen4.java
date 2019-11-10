@@ -2,8 +2,10 @@
 // prompts user for a cutoff price
 // and displays entrees that cost no more than the cutoff
 import java.nio.file.*;
+import java.text.NumberFormat;
 import java.io.*;
 import static java.nio.file.AccessMode.*;
+import static java.nio.file.StandardOpenOption.*;
 import java.util.Scanner;
 public class DebugThirteen4
 {
@@ -19,31 +21,32 @@ public class DebugThirteen4
       boolean wasFound = false;
       try
       {
-         InputStream input = new BufferedInputStream(Files.newInputStream(reader));
-         BufferedReader reader = new BufferedReader(new InputStreamReader(reader));
-         System.out.println();        
+         InputStream input = new BufferedInputStream(Files.newInputStream(file, CREATE));
+         BufferedReader reader = new BufferedReader(new InputStreamReader(input));       
 
-         System.out.print("Enter maximum price to search for >> ");
-         searchPrice = keyBoard.next();
-         System.out.println("\nEntrees no more than $" + searchPrice + "\n");
+         System.out.print("\nEnter maximum price to search for >> ");
+         searchPrice = Integer.parseInt(keyBoard.next());
+         System.out.println("\nEntrees no more than " + NumberFormat.getCurrencyInstance().format(searchPrice) + "\n");
          string = reader.readLine();
-         while(string == null)
+         while(string != null)
          {
             array = string.split(delimiter);
-            if(searchPrice >= Double.parseDouble(array[2]))
+            Double p = Double.parseDouble(array[1]);
+            if(searchPrice >= Double.parseDouble(array[1]))
             {
-               wasFound = false;
-               System.out.println(array[0] + " $" + array[1]);
+               wasFound = true;
+               System.out.println(array[0] + " " + NumberFormat.getCurrencyInstance().format(p));
             }
             string = reader.readLine();           
          }
          if(!wasFound)
-           System.out.println("No entrees found under $" + price);
+            
+           System.out.println("No entrees found under $" + NumberFormat.getCurrencyInstance().format(searchPrice));
          reader.close();
       }
       catch(Exception e)
       {
-        System.out.println("Message: " + message);
+        System.out.println("Message: " + e);
       }
    }
 }
