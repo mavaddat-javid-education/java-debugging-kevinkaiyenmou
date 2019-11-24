@@ -8,6 +8,6 @@ public class MaviExample extends JFrame implements ItemListener
     JLabel myJLabel = new JLabel("Hello");
     myJLabel.setText("");
     public MaviExample(){
-        //Changed this comment for illustrative purposes
+        //Changed this comment for illustrative purposes again
     }
 }
