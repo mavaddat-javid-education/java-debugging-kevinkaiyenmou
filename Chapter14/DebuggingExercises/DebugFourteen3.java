@@ -13,12 +13,12 @@ public class DebugFourteen3 extends JFrame implements ItemListener
    int totalPrice = 0; 
    String output;
    int pizzaNum;
-   public void DebugFourteen3()
+   public DebugFourteen3()
    {
       super("Pizza List");
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       setLayout(flow);
-      pizzaBox.addItemListener();
+      pizzaBox.addItemListener(this);
       add(toppingList);
       pizzaBox.addItem("cheese");
       pizzaBox.addItem("sausage");
@@ -34,13 +34,13 @@ public class DebugFourteen3 extends JFrame implements ItemListener
    {
       JFrame frame = new DebugFourteen3();
       frame.setSize(200, 150);
-      frame.setVisible();
+      frame.setVisible(true);
    }
 
    @Override
-   public void itemStatechanged(ItemEvent[] list)
+   public void itemStateChanged(ItemEvent itemEvent)
    {
-     Object source = list.getSource();
+     Object source = itemEvent.getSource();
      if(source == pizzaBox)
      {
         int pizzaNum = pizzaBox.getSelectedIndex();
