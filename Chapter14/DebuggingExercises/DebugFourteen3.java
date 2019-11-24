@@ -29,6 +29,7 @@ public class DebugFourteen3 extends JFrame implements ItemListener
       pizzaBox.addItem("black olive");
       add(pizzaBox);
       add(aLabel);
+      add(totPrice);
    }
    public static void main(String[] arguments)
    {
