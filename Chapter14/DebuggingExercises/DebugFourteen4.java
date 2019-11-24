@@ -8,50 +8,54 @@ import java.awt.event.*;
 public class DebugFourteen4 extends JFrame implements ItemListener
 {
    FlowLayout flow = new FlowLayout();
-   String title = new String("Beverage Selector");
+   JLabel title = new JLabel("Beverage Selector");
    Font bigFont = new Font("Arial", Font.PLAIN, 24);
    ButtonGroup drinkGrp = new ButtonGroup();
-   JCheckBox cola = new JCheckBox("Cola",false);
-   JCheckBox lemon = new JCheckBox("Lemonade",false);
-   JCheckBox tea = new JCheckBox("Iced tea");
-   JCheckBox milk = new JCheckBox("Milk");
-   JCheckBox coffee = new JCheckBox("Coffee");
+   JRadioButton cola = new JRadioButton("Cola",false);
+   JRadioButton lemon = new JRadioButton("Lemonade",false);
+   JRadioButton tea = new JRadioButton("Iced tea",false);
+   JRadioButton milk = new JRadioButton("Milk",false);
+   JRadioButton coffee = new JRadioButton("Coffee",false);
    JTextField totPrice = new JTextField(10);
    String output;
    int totalPrice = 0;
    final int HIGH_PRICE = 3;
    final int LOW_PRICE = 2;
-   public FixDebugFourteen4()
+   public DebugFourteen4()
    {
       super("Beverage Selector");
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       setLayout(flow);
       add(cola);
-      cola.addItemListener(this);
       add(lemon);
       add(tea);
-      tea.addItemListener(this);
       add(milk);
-      milk.addItemListener(this);
+      add(coffee);
       add(totPrice);
+      tea.addItemListener(this);
+      cola.addItemListener(this);
+      milk.addItemListener(this);
+      lemon.addItemListener(this);
+      coffee.addItemListener(this);
 
       drinkGrp.add(cola);
       drinkGrp.add(lemon);
       drinkGrp.add(milk);
       drinkGrp.add(coffee);
+      drinkGrp.add(tea);
       totPrice.setText("0");
    }
    public static void main(String[] arguments)
    {
-      JFrame bFrame = new DebugFourteen4();
-      bFrame.setSize(350, 100);
-      bFrame.setVisible(true);
+      JFrame jFrame = new DebugFourteen4();
+      jFrame.setSize(350, 100);
+      jFrame.setVisible(true);
    } 
    @Override
    public void itemStateChanged(ItemEvent check)
    {
       Object source = check.getItem();
-      if(source == cola && source == milk)
+      if(source == cola || source == milk)
       {
          totPrice.setText("$" + HIGH_PRICE);
       }
