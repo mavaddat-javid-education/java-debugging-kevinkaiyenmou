@@ -8,7 +8,7 @@ import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import java.net.URL;
 /**  To compile, make sure to set the --module-path and the -cp in `javac`. So you will run something like
- * javac --module-path="/Users/${eval echo ~$USER}/Downloads/javafx-sdk-14/lib/*" -cp "/Users/${eval echo ~$USER}/Downloads/javafx-sdk-14/lib/*" JavaFXThing.java
+ * javac --module-path "$(eval echo ~$USER)/Downloads/javafx-sdk-14/lib/*" -cp "$(eval echo ~$USER)/Downloads/javafx-sdk-14/lib/*" -d . JavaFXThing.java
   */
 
 public class JavaFXThing extends Application{
