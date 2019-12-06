@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.*;
 import java.awt.event.*;
 import java.awt.Color;
 public class DebugFifteen1 extends JFrame implements ActionListener
@@ -11,20 +10,20 @@ public class DebugFifteen1 extends JFrame implements ActionListener
    JButton button4 = new JButton("Yellow");
    JButton button5 = new JButton("Black");
 
-   JPanel panel1 = new JPanel(new FlowLayout());
-   JPanel panel2 = new JPanel();
+   JPanel panel2 = new JPanel(new FlowLayout());
+   JPanel panel1 = new JPanel();
 
    public DebugFifteen1()
    {
       setLayout(new GridLayout(1, 2));
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      add(panel1);
+    //add(panel1);
       add(panel2);
-      panel1.add(button1);
-      panel1.add(button2);
-      panel1.add(button3);
-      panel1.add(button4);
-      panel1.add(button5);
+      panel2.add(button1);
+      panel2.add(button2);
+      panel2.add(button3);
+      panel2.add(button4);
+      panel2.add(button5);
       button1.addActionListener(this);
       button2.addActionListener(this);
       button3.addActionListener(this);
@@ -38,13 +37,13 @@ public class DebugFifteen1 extends JFrame implements ActionListener
    {
       Object source = e.getSource();
       if(source == button1)   
-         panel2.setBackground(Color.RED); //Note from Kevin: these all make half of the background red, pink, orange etc. is that intended?
+         panel2.setBackground(Color.RED); //Note from Kevin: these all make half of the background red, pink, orange etc. is that int
       else if(source == button2)
-         panel2.setBackground(Color.PINK);
+         panel2.setBackground(Color.PINK);//Note from Kevin: colour problem is fixed 
       else if(source == button3)
-         panel2.setBackground(Color.ORANGE);
-      else if(source == button4)         
-         panel2.setBackground(Color.YELLOW);
+         panel2.setBackground(Coolor.ORANGE);
+      else if(source setBackground == button4)         
+         panel2.(Color.YELLOW);
       else if(source == button5)
          panel2.setBackground(Color.BLACK);
    }

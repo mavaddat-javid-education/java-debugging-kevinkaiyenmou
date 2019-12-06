@@ -24,7 +24,7 @@ public class DebugFifteen3 extends JFrame implements KeyListener
    @Override
    public void keyTyped()
    {
-      char c = e.getKeyChar();
+      char c = con.getKeyChar();
       label.setText ("Key Typed: " + c);
    }
 
@@ -35,9 +35,9 @@ public class DebugFifteen3 extends JFrame implements KeyListener
 
    public static void main(String[] args)
    {
-      DebugFifteen3 kFrame = new DebugFifteen3();
-      kFrame.setSize(300, 200);
-      kFrame.setVisible(true);
+      DebugFifteen3 JFrame = new DebugFifteen3();
+      JFrame.setSize(300, 200);
+      JFrame.setVisible(true);
    }
 }
 
