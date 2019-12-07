@@ -24,13 +24,13 @@ public class DebugFifteen4 extends JFrame
       mainBar.add(menu1);
       mainBar.add(menu2);   
       mainBar.add(menu3);
-      menu1.add(exit)
+      menu1.add(exit);
       menu2.add(animal);
       menu2.add(song);
       menu2.add(flower);
-      menu3.add(Milwaukee);
-      menu3.add(Madison);
-      exit.addActionListener(this);
+      menu3.add(milwaukee);
+      menu3.add(madison);
+      exit.addActionListener(this); //Note from kevin: not sure if JMenuBar can go with ActionListener. The book never covered it i think.
       animal.addActionListener(this);
       song.addActionListener(this);
       flowmer.addActionListener(this);

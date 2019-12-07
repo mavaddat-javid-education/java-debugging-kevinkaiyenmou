@@ -11,7 +11,7 @@ public class DebugFifteen1 extends JFrame implements ActionListener
    JButton button5 = new JButton("Black");
 
    JPanel panel2 = new JPanel(new FlowLayout());
-   JPanel panel1 = new JPanel();
+ //JPanel panel1 = new JPanel();
 
    public DebugFifteen1()
    {

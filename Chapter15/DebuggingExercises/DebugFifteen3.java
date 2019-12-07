@@ -3,7 +3,7 @@
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
-public class DebugFifteen3 extends JFrame implements KeyListener
+public class DebugFifteen3 extends JFrame implements KeyListener // DebugFifteen3 is not abstract and does not override abstract method keyPressed(KeyEvent) in KeyListener
 {
    char key;
    Container con = null;
