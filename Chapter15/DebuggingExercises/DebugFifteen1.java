@@ -4,11 +4,11 @@ import java.awt.event.*;
 import java.awt.Color;
 public class DebugFifteen1 extends JFrame implements ActionListener
 {
-   JButton button1 = new JButton("Red");
-   JButton button2 = new JButton("Pink");
-   JButton button3 = new JButton("Orange");
-   JButton button4 = new JButton("Yellow");
-   JButton button5 = new JButton("Black");
+   JButton mrRed = new JButton("Red");
+   JButton mrPink = new JButton("Pink");
+   JButton mrOrange = new JButton("Orange");
+   JButton mrYellow = new JButton("Yellow");
+   JButton mrBlack = new JButton("Black");
 
    JPanel panel2 = new JPanel(new FlowLayout());
  //JPanel panel1 = new JPanel();
@@ -19,16 +19,16 @@ public class DebugFifteen1 extends JFrame implements ActionListener
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     //add(panel1);
       add(panel2);
-      panel2.add(button1);
-      panel2.add(button2);
-      panel2.add(button3);
-      panel2.add(button4);
-      panel2.add(button5);
-      button1.addActionListener(this);
-      button2.addActionListener(this);
-      button3.addActionListener(this);
-      button4.addActionListener(this);
-      button5.addActionListener(this);
+      panel2.add(mrRed);
+      panel2.add(mrPink);
+      panel2.add(mrOrange);
+      panel2.add(mrYellow);
+      panel2.add(mrBlack);
+      mrRed.addActionListener(this);
+      mrPink.addActionListener(this);
+      mrOrange.addActionListener(this);
+      mrYellow.addActionListener(this);
+      mrBlack.addActionListener(this);
       setSize(400, 200);
       setVisible(true);
    }
@@ -36,15 +36,15 @@ public class DebugFifteen1 extends JFrame implements ActionListener
    public void actionPerformed(ActionEvent e)
    {
       Object source = e.getSource();
-      if(source == button1)   
+      if(source == mrRed)   
          panel2.setBackground(Color.RED); //Note from Kevin: these all make half of the background red, pink, orange etc. is that int
-      else if(source == button2)
+      else if(source == mrPink)
          panel2.setBackground(Color.PINK);//Note from Kevin: colour problem is fixed 
-      else if(source == button3)
-         panel2.setBackground(Coolor.ORANGE);
-      else if(source setBackground == button4)         
-         panel2.(Color.YELLOW);
-      else if(source == button5)
+      else if(source == mrOrange)
+         panel2.setBackground(Color.ORANGE);
+      else if(source == mrYellow)         
+         panel2.setBackground(Color.YELLOW);
+      else if(source == mrBlack)
          panel2.setBackground(Color.BLACK);
    }
    public static void main(String[] args)

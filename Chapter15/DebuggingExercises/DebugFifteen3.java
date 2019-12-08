@@ -6,26 +6,27 @@ import java.awt.*;
 public class DebugFifteen3 extends JFrame implements KeyListener // DebugFifteen3 is not abstract and does not override abstract method keyPressed(KeyEvent) in KeyListener
 {
    char key;
-   Container con = null;
+   Container con = null; //new JFrame().getContentPane();
    GridLayout grid = new GridLayout(2, 1);
    JLabel label = new JLabel("Key Typed:");
    JTextArea textArea = new JTextArea(4, 25);
    public DebugFifteen3()
    {
-      setTitle("Debug Key Frame");
-      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      con = this.getContentPane();
+      this.setTitle("Debug Key Frame");
+      this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       con.setLayout(grid);
       con.add(textArea);
       con.add(label);
-      addKeyListener(this);
+      this.addKeyListener(this);
       textArea.addKeyListener(this);
    }
 
    @Override
-   public void keyTyped()
+   public void keyTyped(KeyEvent e)
    {
-      char c = con.getKeyChar();
-      label.setText ("Key Typed: " + c);
+      char c = e.getKeyChar();
+      label.setText("Key Typed: " + c);
    }
 
    @Override
@@ -33,11 +34,15 @@ public class DebugFifteen3 extends JFrame implements KeyListener // DebugFifteen
    {
    }
 
+   @Override
+   public void keyPressed(KeyEvent e)
+   {
+   }
    public static void main(String[] args)
    {
-      DebugFifteen3 JFrame = new DebugFifteen3();
-      JFrame.setSize(300, 200);
-      JFrame.setVisible(true);
+      DebugFifteen3 frame = new DebugFifteen3();
+      frame.setSize(300, 200);
+      frame.setVisible(true);
    }
 }
 

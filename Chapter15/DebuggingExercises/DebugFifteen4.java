@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-public class DebugFifteen4 extends JFrame
+public class DebugFifteen4 extends JFrame implements ActionListener
 {
    JMenuBar mainBar = new JMenuBar();
    JMenu menu1 = new JMenu("File");
@@ -33,9 +33,9 @@ public class DebugFifteen4 extends JFrame
       exit.addActionListener(this); //Note from kevin: not sure if JMenuBar can go with ActionListener. The book never covered it i think.
       animal.addActionListener(this);
       song.addActionListener(this);
-      flowmer.addActionListener(this);
-      milwalkee.addActionListener(this);
-      madisin.addActionListener(this);
+      flower.addActionListener(this);
+      milwaukee.addActionListener(this);
+      madison.addActionListener(this);
       add(label1);
       label1.setFont(new Font("Arial", Font.BOLD, 14));
       add(label2);
