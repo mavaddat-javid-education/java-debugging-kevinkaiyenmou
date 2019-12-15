@@ -1,7 +1,7 @@
 // This program displays promotional messages
 // with the click of a button
 // The button is disabled when all messages are on screen
-import javax.swing.*;
+import javax.swing.*;   
 import java.awt.*;
 import java.awt.Color;
 import java.awt.event.*;
@@ -12,8 +12,7 @@ public class DebugSixteen3 extends JPanel implements ActionListener
    JLabel secText = new JLabel("What makes us better that most?");
    JButton findOutButton = new JButton("Find Out");
    FlowLayout flow = new FlowLayout();
-   String[] reason= {"Our products","Our people",
-        "Our committment","Our service","YOU!!"};
+   String[] reason = {"Our products","Our people", "Our committment","Our service","YOU!!"};
    Font boldFont =new Font("TimesRoman", Font.BOLD, 20);
    final int GAP = 20;
    int x = 30, y = 50;
@@ -24,8 +23,8 @@ public class DebugSixteen3 extends JPanel implements ActionListener
      setBackground(Color.PINK);
      add(firstText);
      add(secText);
-     add (findOutButton);
-     findOutbutton.addActionListener(this);
+     add(findOutButton);       
+     findOutButton.addActionListener(this);
    }
 
    @Override
@@ -46,7 +45,7 @@ public class DebugSixteen3 extends JPanel implements ActionListener
    public static void main(String[] args)
    {
       JFrame frame = new JFrame();
-      frame.add(new DebugSixteen3);
+      frame.add(new DebugSixteen3());
       frame.setSize(350, 250);
       frame.setVisible(true);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
