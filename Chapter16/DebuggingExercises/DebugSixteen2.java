@@ -7,24 +7,28 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.Color;
 import java.awt.event.*;
-
+import java.util.*;
 public class DebugSixteen2 extends JPanel implements MouseListener
 {
    int x, y;
-   int size;
+   static int size=20;
+   static boolean CLICKED = false;
 
    public DebugSixteen2()
    {
+      super();
       JFrame frame = new JFrame();
-      frame.addMouseListener(this);
       frame.add(this);
+      frame.addMouseListener(this);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      frame.setVisible(true);
+      frame.setSize(250, 150);
+      frame.setBackground(Color.WHITE);
    }
    public static void main(String[] args)
    {
-     DebugSixteen2 frame = new DebugSixteen2();
-     frame.setSize(250, 150);
-     frame.setVisible(true);
+     DebugSixteen2 panel = new DebugSixteen2();
+     panel.setVisible(true);
    }
 
    @Override
@@ -37,10 +41,12 @@ public class DebugSixteen2 extends JPanel implements MouseListener
    @Override
    public void mouseClicked(MouseEvent e)
    {
-      if(e.getClickCount() == 2)
-        size = 20;
+      CLICKED = true;
+      if(e.getClickCount() > 1)
+        size -= 2;
       else
         size = 20;
+      System.out.println("You clicked " + e.getClickCount() + " times");
      repaint();
    }
    @Override
@@ -51,6 +57,7 @@ public class DebugSixteen2 extends JPanel implements MouseListener
    @Override
    public void mouseExited(MouseEvent e)
    {
+      setBackground(new Color( new Random().nextFloat(),new Random().nextFloat(),new Random().nextFloat() ));
    }
    @Override
    public void mouseReleased(MouseEvent e)
@@ -60,6 +67,7 @@ public class DebugSixteen2 extends JPanel implements MouseListener
    public void paintComponent(Graphics g)
    {
      super.paintComponent(g);
-     g.drawOval(x - size, y - size, size * 2, size * 2);
+     if (CLICKED) 
+      g.drawOval(x - size, y - size, size * 2, size * 2);
    }
 }
