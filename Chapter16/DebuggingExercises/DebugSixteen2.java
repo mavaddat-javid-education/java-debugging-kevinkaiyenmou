@@ -1,13 +1,15 @@
 // The panel should change color when a user's mouse enters or exits it
 // A circle should appear wherever the user clicks
 // The circle becomes smaller when the user double-clicks
-// Note from Kevin: The program runs for a short amount of time but then a java.lang.StackOverflowError occurs and I'm not sure what to do.
 
-import javax.swing.*;
-import java.awt.*;
 import java.awt.Color;
-import java.awt.event.*;
-import java.util.*;
+import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.Random;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 public class DebugSixteen2 extends JPanel implements MouseListener
 {
    int x, y;

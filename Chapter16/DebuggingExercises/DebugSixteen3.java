@@ -2,7 +2,6 @@
 // with the click of a button
 // The button is disabled when all messages are on screen
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -21,34 +20,36 @@ public class DebugSixteen3 extends JPanel implements ActionListener
    String[] reason = {"Our products","Our people", "Our committment","Our service","YOU!!"};
    Font boldFont =new Font("TimesRoman", Font.BOLD, 20);
    final int GAP = 20;
-   int x = 30, y = 50;
+   int x = 30, y = 90;
    int counter = 0;
-   JPanel panel = new JPanel(new FlowLayout());
+   //JPanel panel = new JPanel(new FlowLayout());
 
    public DebugSixteen3()
-   {
-     panel.setBackground(Color.PINK);
-     panel.add(firstText);
-     panel.add(secText);
-     panel.add(findOutButton);       
+   { 
+     setBackground(Color.PINK);
+     add(firstText);
+     add(secText);
+     add(findOutButton); 
      findOutButton.addActionListener(this);
    }
 
    @Override   
    public void actionPerformed(ActionEvent e)
    {
-      ++counter;
-      if(counter >= reason.length)
+      counter++;
+      if(counter < reason.length)
+         /* add(new JLabel(reason[counter++])) */;
+      else
          findOutButton.setEnabled(false);
-    //System.out.println(reason[counter]);
+      this.repaint();
    }  
    @Override
    public void paintComponent(Graphics g)
    {
        g.setFont(boldFont);
-       g.setColor(Color.BLUE);;
+       g.setColor(Color.BLUE);
        for(int i = 0; i < counter; ++i)
-         g.drawString(reason[i], x, y += GAP);
+         g.drawString(reason[i], x, y + GAP*i);
     }   
    public static void main(String[] args)
    {
