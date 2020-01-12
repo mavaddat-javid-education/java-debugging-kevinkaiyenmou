@@ -1,12 +1,18 @@
 // This program shows a customer
 // what a shirt looks like in different colors
-import javax.swing.*;
-import java.awt.*;
 import java.awt.Color;
-import java.awt.event.*;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 public class DebugSixteen4 extends JPanel implements ActionListener
 {
-   JLabel header = new JLabel("Outfit planner);
+   JLabel header = new JLabel("Outfit planner");
    JButton changeButton = new JButton("Change clothes");
    int counter = 0;
    int xTop[] = { 20, 40, 50, 60, 80, 75, 62, 66, 40, 38, 25, 20};
