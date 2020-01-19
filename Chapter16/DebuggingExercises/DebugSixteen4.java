@@ -47,12 +47,18 @@ public class DebugSixteen4 extends JPanel implements ActionListener
       g.drawString("in which you can buy", X, Y + GAP);
       g.drawString("this beautiful shirt", X, Y + GAP*2);
       g.drawString("Only $" + PRICE, X, Y + GAP*3);
-      g.drawOval(x, y, SIZE, SIZE); //Note from kevin: I just realized I didn't need to make new variables but I'm not changing it yet to save time.
-      g.drawOval(46, 142, 2, 2);
-      g.drawOval(55, 142, 2, 2);
-      g.drawLine(46, 150, 48, 151);
-      g.drawLine(48, 151, 50, 152);
-      g.drawLine(50, 152, 52, 152);
+      g.setColor(colors[cycle]);
+      g.setColor(new Color(255 - g.getColor().getRed(), 255 - g.getColor().getGreen(), 255 - g.getColor().getBlue()));
+      g.drawOval(x, y, SIZE, SIZE); //Note from kevin: I just realized I didn't need to make new variables but I'm not changing it yet to save time. also, this is the head
+      
+      System.out.println("The color is now: " + g.getColor());
+      g.drawOval(46, 142, 2, 2); // right eye
+      g.drawOval(55, 142, 2, 2); // left eye
+
+      //the smile
+      g.drawLine(46, 150, 48, 151); 
+      g.drawLine(48, 151, 50, 152); 
+      g.drawLine(50, 152, 52, 152); 
       g.drawLine(52, 152, 54, 151);
       g.drawLine(54, 151, 56, 150);
    }
